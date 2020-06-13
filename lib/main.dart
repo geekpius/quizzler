@@ -32,35 +32,35 @@ class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
   QuizBrain quizBrain = new QuizBrain();
 
-//  void checkAnswer(bool pickedAnswer) {
-//    bool correctAnswer = quizBrain.getQuestionAnswer();
-//    if (quizBrain.isEnded()) {
-//      Alert(
-//              context: context,
-//              title: "Quiz Ends",
-//              desc: "This is the end of the quiz.")
-//          .show();
-//    } else {
-//      setState(() {
-//        if (pickedAnswer == correctAnswer) {
-//          scoreKeeper.add(
-//            Icon(
-//              Icons.check,
-//              color: Colors.green,
-//            ),
-//          );
-//        } else {
-//          scoreKeeper.add(
-//            Icon(
-//              Icons.close,
-//              color: Colors.red,
-//            ),
-//          );
-//        }
-//        quizBrain.nextQuestion();
-//      });
-//    }
-//  }
+  void checkAnswer(bool pickedAnswer) {
+    bool correctAnswer = quizBrain.getQuestionAnswer();
+    if (quizBrain.isEnded()) {
+      Alert(
+              context: context,
+              title: "Quiz Ends",
+              desc: "This is the end of the quiz.")
+          .show();
+    } else {
+      setState(() {
+        if (pickedAnswer == correctAnswer) {
+          scoreKeeper.add(
+            Icon(
+              Icons.check,
+              color: Colors.green,
+            ),
+          );
+        } else {
+          scoreKeeper.add(
+            Icon(
+              Icons.close,
+              color: Colors.red,
+            ),
+          );
+        }
+        quizBrain.nextQuestion();
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
